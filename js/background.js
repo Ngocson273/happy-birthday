@@ -1,0 +1,11 @@
+/* Nền tiệc: bóng bay, bánh, kẹo, mây hồng */
+(function(){
+  const b=(x,y,r,c)=>`<g><path d="M${x} ${y+r} q-6 60 8 110" stroke="#ccc" fill="none"/><circle cx="${x}" cy="${y}" r="${r}" fill="url(#${c})"/></g>`;
+  $('bg').insertAdjacentHTML('beforeend',`
+  <svg style="left:0;top:0;width:34vw;height:60vh" viewBox="0 0 260 360"><defs><radialGradient id="pk" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#f6a6c8"/></radialGradient></defs>${b(80,60,48,'pk')}${b(160,20,34,'pk')}${b(40,130,26,'pk')}</svg>
+  <svg style="right:0;top:0;width:34vw;height:80vh" viewBox="0 0 260 420"><defs><radialGradient id="pc" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#f4b9d0"/></radialGradient><radialGradient id="pe" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#f9c9a8"/></radialGradient><radialGradient id="pu" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#cdb1e6"/></radialGradient></defs>${b(190,50,40,'pc')}${b(120,120,34,'pe')}${b(210,170,36,'pu')}${b(150,230,40,'pc')}${b(230,280,34,'pe')}${b(90,300,28,'pu')}</svg>
+  <svg style="left:2vw;bottom:2vh;width:26vw;max-width:300px" viewBox="0 0 220 240"><rect x="30" y="120" width="150" height="90" rx="14" fill="#f6a3b8"/><rect x="40" y="90" width="130" height="50" rx="12" fill="#f9bccd"/><path d="M40 112q15 14 30 0t30 0 30 0 30 0" fill="#fff8" /><rect x="58" y="60" width="8" height="30" fill="#ffe27a"/><rect x="100" y="55" width="8" height="35" fill="#ffe27a"/><rect x="60" y="100" width="90" height="22" rx="11" fill="#f2749d"/><text x="105" y="116" text-anchor="middle" fill="#fff" font-size="13" font-family="Pacifico">Happy Birthday</text></svg>
+  <svg style="right:4vw;bottom:6vh;width:20vw;max-width:220px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#f06ca4"/><circle cx="50" cy="50" r="34" fill="#f9a8c9"/><circle cx="50" cy="50" r="22" fill="#f06ca4"/><circle cx="50" cy="50" r="10" fill="#fcd0e1"/></svg>`);
+  const cl=[[ -6,72,50,38],[30,86,60,30],[62,78,55,34],[85,68,40,40]];
+  cl.forEach(([x,y,w,h])=>{const d=document.createElement('div');d.className='cloud';d.style.cssText=`left:${x}%;top:${y}%;width:${w}vw;height:${h}vh;opacity:.75`;$('bg').appendChild(d)});
+})();

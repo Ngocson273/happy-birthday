@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday VIP</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+/* Hiện lỗi lên màn hình để dễ tìm nguyên nhân */
+function toast(m){var d=document.createElement('div');d.textContent=m;d.style.cssText='position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:999;background:#7a1f4b;color:#fff;padding:10px 16px;border-radius:12px;font:14px sans-serif;max-width:90vw;text-align:center';document.body.appendChild(d);setTimeout(function(){d.remove()},7000)}
+addEventListener('error',function(e){if(e.target&&e.target!==window&&e.target.tagName==='AUDIO')return;toast('Lỗi: '+(e.message||'không tải được '+((e.target&&(e.target.src||e.target.href))||'file')))},true);
+</script>
+</head>
+<body>
+
+<div id="bg"><div class="top"></div></div>
+
+<section class="scene on" id="s1"><div class="c">
+  <svg id="gift" viewBox="0 0 100 100"><rect x="14" y="42" width="72" height="46" rx="5" fill="#e8467c"/><rect x="10" y="32" width="80" height="18" rx="4" fill="#ff5f93"/><rect x="43" y="32" width="14" height="56" fill="#ffd95a"/><path d="M50 32C34 8 14 22 38 32zM50 32C66 8 86 22 62 32z" fill="#ffd95a" stroke="#f0b92c" stroke-width="2"/></svg>
+  <p class="pac">Chạm vào hộp quà để nhận điều bất ngờ</p>
+</div></section>
+
+<section class="scene" id="s2"><div class="c">
+  <div class="cake"><b class="pl"></b><b class="l1"></b><b class="l2"></b><b class="l3"></b><b class="cn"></b></div>
+  <h1>Happy Birthday!</h1><h2 id="sub">My Love</h2>
+  <button id="go" title="Tiếp tục">✈</button>
+</div></section>
+
+<section class="scene" id="s3"><div class="c">
+  <div class="book closed" id="book"></div>
+  <div class="bar" id="bar"><button>💗</button><button id="nx">➜</button></div>
+</div></section>
+
+<section class="scene" id="s4"><div class="c" style="position:relative">
+  <div class="env" id="env"><i></i><i class="lf"></i><i class="rt"></i><i class="fr"></i><i class="fl"></i><span class="hrt" id="hrt">💗</span></div>
+  <div class="paper" id="paper">
+    <h3>Em yêu à,</h3>
+    <p class="f">Hôm nay là một ngày vô cùng đặc biệt - ngày mà một người tuyệt vời như em xuất hiện trên thế giới này. Anh chỉ muốn nói rằng, gặp được em là điều may mắn nhất trong cuộc đời anh.</p>
+    <p>&nbsp;&nbsp;Chúc em luôn xinh đẹp, hạnh phúc và mãi ở bên anh như bây giờ. Dù sau này có chuyện gì xảy ra, anh vẫn sẽ luôn nắm tay em thật chặt.</p>
+    <p class="sg">Yêu em nhiều hơn mỗi ngày.</p>
+    <div class="ck" id="ck" title="Bấm vào bánh">🎂</div>
+  </div>
+</div></section>
+
+<section class="scene" id="s5"><div class="c">
+  <div class="ld"><h4>Happy Birthday!</h4><p>Đang tải ảnh và lời chúc</p><div class="tr"><div id="pb"></div></div><b id="pct">0%</b></div>
+</div></section>
+
+<section class="scene" id="s6"><canvas id="cv"></canvas><div id="fx"></div></section>
+
+<audio id="bgm" loop></audio>
+<button id="mute" title="Bật/tắt nhạc" aria-label="Bật/tắt nhạc">🔇</button>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/photos.js"></script>
+<script src="js/background.js"></script>
+<script src="js/music.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/finale.js"></script>
+</body>
+</html>
